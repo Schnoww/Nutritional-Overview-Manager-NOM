@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import Spreadsheet from "react-spreadsheet";
+
+export default function Sheet() {
+  const [data, setData] = useState([
+  //MARKET PLACE
+
+  
+    // Breakfast
+    [{ value: "Vanilla Belgian Waffle" }, { value: "260 calories" }, { value: "Milk wheat soy gluten vegetarian" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Hash Brown Patty" }, { value: "150 calories" }, { value: "soy vegetarian vegan" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Made to Order Omelet With Meat" }, { value: "290 calories" }, { value: "Milk eggs" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Made to Order Omelet With Vegetables" }, { value: "290 calories" }, { value: "Milk eggs vegetarian" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Ham, Egg and Cheese Bagel" }, { value: "470 calories" }, { value: "milk eggs wheat soy gluten" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Hash Browned Potatoes" }, { value: "470 calories" }, { value: "milk eggs wheat soy gluten" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Buttermilk Pancakes" }, { value: "180 calories" }, { value: "milk eggs wheat soy gluten vegetarian" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Scrambled Eggs" }, { value: "190 calories" }, { value: "eggs vegetarian" }, { value: "Breakfast" }, { value: "Marketplace" }],
+    [{ value: "Bacon Slices" }, { value: "70 calories" }, { value: "N/A" }, { value: "Breakfast" }, { value: "Marketplace" }],
+  
+    // Lunch
+    [{ value: "Oatmeal" }, { value: "110 calories" }, { value: "vegetarian vegan" }, { value: "Lunch" }, { value: "Marketplace" }],
+    [{ value: "Sauteed Spinach & Caramelized Onions" }, { value: "45 calories" }, { value: "vegetarian vegan mindful" }, { value: "Lunch" }, { value: "Marketplace" }],
+    [{ value: "Butter Tofu" }, { value: "240 calories" }, { value: "milk soybean vegetarian" }, { value: "Lunch" }, { value: "Marketplace" }],
+    [{ value: "Butter Chicken" }, { value: "300 calories" }, { value: "milk" }, { value: "Lunch" }, { value: "Marketplace" }],
+    [{ value: "Basmati Rice With Green Peas" }, { value: "130 calories" }, { value: "vegetarian vegan mindful" }, { value: "Lunch" }, { value: "Marketplace" }],
+  
+    //Dinner
+      [{ value: "Spicy Shrimp & Vegetable Stir Fry" }, { value: "360 cal" }, { value: "shrimp vegan" }, { value: "Dinner" }, { value: "Marketplace" }],
+      [{ value: "Vegetable Fried Rice" }, { value: "170 cal" }, { value: "egg wheat soybean gluten vegetarian" }, { value: "Dinner" }, { value: "Marketplace" }],
+      [{ value: "Spicy Tofu & Vegetable Stir Fry" }, { value: "420 cal" }, { value: "wheat soybeans sesame gluten vegetarian vegan" }, { value: "Dinner" }, { value: "Marketplace" }],
+  
+    //WOW
+      [{ value: "Veggie Quesadilla" }, { value: "990 calories" }, { value: "milk wheat gluten soy" }, { value: "All Day" }, { value: "WOW" }],
+      [{ value: "Santa Fe Chicken Quesadilla" }, { value: "990 calories" }, { value: "egg milk wheat gluten soy" }, { value: "All Day" }, { value: "WOW" }],
+      [{ value: "Chicken Parm Quesadilla" }, { value: "927 calories" }, { value: "N/A" }, { value: "All Day" }, { value: "WOW" }]
+
+    
+  
+  ]);
+
+  // Define custom column headers
+  const columnHeaders = ["Meal", "Calories", "Diet", "Time", "Location"];
+
+  return (  
+    <div> 
+      <h4>Meal Information Backend</h4>
+      <table className="border-collapse border border-gray-300">
+        <thead>
+          <tr className="bg-gray-200">
+            <th className="border border-gray-300 p-2"></th> {/* Empty corner for row numbers */}
+            {columnHeaders.map((header, index) => (
+              <th key={index} className="border border-gray-300 p-2 text-center">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {/* Default row numbers */}
+              <td className="border border-gray-300 p-2 font-bold text-center">
+                {rowIndex + 1}
+              </td>
+              {/* Spreadsheet cells */}
+              {row.map((cell, colIndex) => (
+                <td key={colIndex} className="border border-gray-300 p-2">
+                  <input
+                    type="text"
+                    value={cell.value}
+                    onChange={(e) => {
+                      const newData = [...data];
+                      newData[rowIndex][colIndex] = { value: e.target.value };
+                      setData(newData);
+                    }}
+                    className="w-full border-none outline-none text-center"
+                  />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
