@@ -1,18 +1,14 @@
-import { BarChart2, Calendar, DollarSign, Locate, Megaphone, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { BarChart2, Calendar, DollarSign, Locate, Megaphone, Utensils, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const SIDEBAR_ITEMS = [
-	{
-		name: "Overview",
-		icon: BarChart2,
-		color: "#6366f1",
-		href: "/",
-	},
+	{ name: "Overview", icon: BarChart2, color: "#6366f1",href: "/", },
+	{ name: "Dining", icon: Utensils, color: "#FFFFFF", href: "/dining", },
 	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
 	{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
-	{ name: "Announcments", icon: Megaphone, color: "#ff0000", href: "/announcments" },
+	{ name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
 	{ name: "Calendar", icon: Calendar, color: "#FFFF00", href: "/calendar" },
 	{ name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },
 	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
