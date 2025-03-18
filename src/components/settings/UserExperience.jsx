@@ -2,6 +2,7 @@ import { useState } from "react";
 import SettingSection from "./SettingSection";
 import { Bell } from "lucide-react"; // Removed unused import Navigation
 import ToggleSwitch from "./ToggleSwitch";
+import ThemeSelector from "../Managers/ThemeSelector";
 
 const UserExperience = () => {
     const [notifications, setNotifications] = useState({
@@ -52,6 +53,8 @@ const UserExperience = () => {
                 isOn={notifications["Keyboard Navigation (Motor)"]}
                 onToggle={() => handleToggle("Keyboard Navigation (Motor)")}
             />
+            <ThemeSelector/>
+
         </SettingSection>
     );
 };
