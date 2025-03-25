@@ -13,11 +13,10 @@ const DiningPage = () => {
 			<Header title='Dining' />
 			<main className='max-w-4xl mx-auto py-6 px-4 lg:px-8'>
                 <Marketplace />
-                {/* <Fod />
+                <Fod />
                 <Jazzmans />
                 <Wow />
-                <Moes /> */}
-
+                <Moes />
 			</main>
 		</div>
 	);
