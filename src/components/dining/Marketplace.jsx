@@ -10,7 +10,7 @@ const Marketplace = () => {
 						alt='Marketplace'
 						className='object-cover w-full h-full'
 					/>
-					{/* Adjust the opacity of the overlay */}
+					{/**/}
 					<div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-10'> {/* Change 50 to 30 */}
 						<h2 className='text-white text-2xl font-bold'></h2>
 					</div>
