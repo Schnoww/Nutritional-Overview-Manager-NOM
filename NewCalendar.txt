@@ -1,0 +1,142 @@
+// import { useState } from 'react';
+// import * as React from "react";
+// import Calendar from 'react-calendar';
+// import 'react-calendar/dist/Calendar.css';
+// import './App.css';
+// import './NewCalendar.css'
+// import iniData from './data.jsx';
+//
+// const NewCalendar = () => {
+//     const [bOpen, setbOpen] = React.useState(false);
+//     const [lOpen, setlOpen] = React.useState(false);
+//     const [dOpen, setdOpen] = React.useState(false);
+//     const [oOpen, setoOpen] = React.useState(false);
+//
+//     const breakOpen = () => {
+//         setbOpen(!bOpen);
+//     };
+//
+//     const lunchOpen = () => {
+//         setlOpen(!lOpen);
+//     };
+//
+//     const dinnerOpen = () => {
+//         setdOpen(!dOpen);
+//     };
+//
+//     const otherOpen = () => {
+//         setoOpen(!oOpen);
+//     };
+//
+//     const [date, setDate] = useState(() => new Date());
+//
+//     return (
+//         <div className='container'>
+//
+//             <div className='child'>
+//                 <Calendar onChange={setDate} value={date}/>
+//             </div>
+//             <div className='child'>
+//                 <h1>Daily Items</h1>
+//
+//                 <div className='Breakfast'>
+//                     <button onClick={breakOpen}>
+//                         Breakfast {iniData
+//                         .filter((food) =>
+//                             food.time === "Breakfast" &&
+//                             new Date(food.date).toISOString().split("T")[0] ===
+//                             new Date(date).toISOString().split("T")[0]
+//                         )
+//                         .reduce((sum, food) => sum + food.calories, 0)} calories
+//                     </button>
+//
+//                     {bOpen ? (
+//                         <ul className="menu">
+//                             {iniData.map((food) => (
+//                                 food.time === 'Breakfast' ? (
+//                                     food.date.toISOString().split("T")[0] === date.toISOString().split("T")[0] ? (
+//                                         <h3 key={food.name}> {food.name} {food.calories} calories</h3>
+//                                     ) : null
+//                                 ) : null
+//                             ))}
+//
+//                         </ul>
+//                     ) : null}
+//                 </div>
+//
+//                 <div className='Lunch'>
+//                     <button onClick={lunchOpen}>
+//                         Lunch {iniData
+//                         .filter((food) =>
+//                             food.time === "Lunch" &&
+//                             new Date(food.date).toISOString().split("T")[0] ===
+//                             new Date(date).toISOString().split("T")[0]
+//                         )
+//                         .reduce((sum, food) => sum + food.calories, 0)} calories
+//                     </button>
+//                     {lOpen ? (
+//                         <ul className="menu">
+//                             {iniData.map((food) => (
+//                                 food.time === 'Lunch' ? (
+//                                     food.date.toISOString().split("T")[0] === date.toISOString().split("T")[0] ? (
+//                                         <h3 key={food.name}> {food.name} {food.calories} calories</h3>
+//                                     ) : null
+//                                 ) : null
+//                             ))}
+//
+//                         </ul>
+//                     ) : null}
+//                 </div>
+//
+//                 <div className='Dinner'>
+//                     <button onClick={dinnerOpen}>
+//                         Dinner {iniData
+//                         .filter((food) =>
+//                             food.time === "Dinner" &&
+//                             new Date(food.date).toISOString().split("T")[0] ===
+//                             new Date(date).toISOString().split("T")[0]
+//                         )
+//                         .reduce((sum, food) => sum + food.calories, 0)} calories
+//                     </button>
+//                     {dOpen ? (
+//                         <ul className="menu">
+//                             {iniData.map((food) => (
+//                                 food.time === 'Dinner' ? (
+//                                     food.date.toISOString().split("T")[0] === date.toISOString().split("T")[0] ? (
+//                                         <h3 key={food.name}> {food.name} {food.calories} calories</h3>
+//                                     ) : null
+//                                 ) : null
+//                             ))}
+//
+//                         </ul>
+//                     ) : null}
+//                 </div>
+//
+//                 <div className='Other'>
+//                     <button onClick={otherOpen}>
+//                         Other {iniData
+//                         .filter((food) =>
+//                             food.time === "Other" &&
+//                             new Date(food.date).toISOString().split("T")[0] ===
+//                             new Date(date).toISOString().split("T")[0]
+//                         )
+//                         .reduce((sum, food) => sum + food.calories, 0)} calories
+//                     </button>
+//                     {oOpen ? (
+//                         <ul className="menu">
+//                             {iniData.map((food) => (
+//                                 food.time === 'All Day' ? (
+//                                     food.date.toISOString().split("T")[0] === date.toISOString().split("T")[0] ? (
+//                                         <h3 key={food.name}> {food.name} {food.calories} calories</h3>
+//                                     ) : null
+//                                 ) : null
+//                             ))}
+//
+//                         </ul>
+//                     ) : null}
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+//

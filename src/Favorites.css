@@ -1,0 +1,163 @@
+.favorites-container {
+    background: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.favorites-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.button-search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.action-button:hover {
+    background: #444;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #333;
+    border-radius: 6px;
+    padding: 10px;
+    flex: 1;
+}
+
+.search-icon {
+    margin-right: 8px;
+    color: #aaa;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+}
+
+/* Food Table */
+.food-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.food-table th,
+.food-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.food-table th {
+    font-weight: bold;
+    border-bottom: 2px solid #444;
+}
+
+.food-table tr {
+    cursor: pointer;
+}
+
+.food-table tr:hover {
+    background: #333;
+}
+
+/* Arrow */
+.arrow {
+    float: right;
+    font-weight: bold;
+    color: #aaa;
+    margin-left: 10px;
+}
+
+/* Expanded Food Details */
+.expanded-details td {
+    background: #2a2a2a;
+    padding: 15px;
+    border-top: 1px solid #444;
+}
+
+.food-details p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+
+
+/*.MainBar {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 10px; !* Space between elements *!*/
+/*}*/
+
+/*.button {*/
+/*    background-color: #2b2d42;*/
+/*    color: white;*/
+/*    padding: 8px 16px;*/
+/*    border-radius: 8px;*/
+/*    border: none;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 5px; !* Space between icon and text *!*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.Search {*/
+/*    flex: 1; !* Makes it take the remaining space *!*/
+/*    background-color: #2b2d42;*/
+/*    color: white;*/
+/*    padding: 8px 16px;*/
+/*    border-radius: 8px;*/
+/*    border: none;*/
+/*}*/
+
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column; !* Stack elements vertically *!*/
+/*    align-items: center; !* Center everything horizontally *!*/
+/*    gap: 20px; !* Adds space between sections *!*/
+/*    width: 100%;*/
+/*}*/
+
+/*.listItems {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 10px; !* Space between elements *!*/
+/*}*/
+
+/*.MarketplaceContainer, .FODContainer, .OtherContainer {*/
+/*    width: 80%; !* Adjust width as needed *!*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*!* Optional: Background colors for visibility *!*/
+/*.MarketplaceContainer { background-color: #000080; } !* Gold *!*/
+/*.FODContainer { background-color: #191970; } !* Light Blue *!*/
+/*.OtherContainer { background-color: #003153; } !* Light Pink *!*/
