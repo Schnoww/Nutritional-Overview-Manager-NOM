@@ -7,7 +7,7 @@ import { Salad } from "lucide-react";
 const MealPlan = () => {
 	return (
         <SettingSection icon={Salad} title={"My Meal Plan"}>
-            {/* <div className='mt-4'>
+            <div className='mt-4'>
                 <p className='text-lg text-gray-200'>
                     Click below to view your personalized meal plan!
                 </p>
@@ -16,7 +16,7 @@ const MealPlan = () => {
             >   
                     View Meal Plans
                 </button>
-            </div> */}
+            </div>
         </SettingSection>
 	);
 };

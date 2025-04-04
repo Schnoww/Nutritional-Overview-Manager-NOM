@@ -1,23 +1,19 @@
-import SettingSection from "./DiningSection";
+import Header from "../common/Header";
+import MealTimeCard from "./MealTimeCard";
 
-const Fod = () => {
+export default function Fod(){
 	return (
-		<SettingSection>
-			<div className='flex flex-col items-center mb-6'>
-				<div className='relative w-full h-64 rounded-lg overflow-hidden shadow-lg'>
-					<img
-						src='FOD.png'
-						alt='Marketplace'
-						className='object-cover w-full h-full'
-					/>
-					{/**/}
-					<div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-10'> {/* Change 50 to 30 */}
-						<h1 className='text-white text-2xl font-bold'>FOOD ON DEMAND</h1>
-					</div>
-				</div>
+		<div className="flex-1 overflow-auto relative z-10">
+			<Header title={"Food on Demand"}/>
+			<div className="flex h-screen m-auto">
+				<main className="justify-items-center  max-w-4x1 mx-auto py-6 px-4 lg:px-8">
+					<MealTimeCard>
+						<h1>test</h1>
+					</MealTimeCard>
+					<MealTimeCard></MealTimeCard>
+					<MealTimeCard></MealTimeCard>
+				</main>
 			</div>
-		</SettingSection>
-	);
-};
-
-export default Fod
+		</div>
+	)
+}

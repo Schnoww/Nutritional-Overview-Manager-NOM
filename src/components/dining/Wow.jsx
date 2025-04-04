@@ -1,4 +1,4 @@
-import SettingSection from "./DiningSection";
+import SettingSection from "./DiningCard";
 
 const Wow = () => {
 	return (

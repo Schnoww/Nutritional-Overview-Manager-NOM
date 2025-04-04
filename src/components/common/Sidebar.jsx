@@ -14,7 +14,7 @@ const SIDEBAR_ITEMS = [
 	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
 
-const Sidebar = () => {
+export default function Sidebar(){
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
 	return (
@@ -24,7 +24,8 @@ const Sidebar = () => {
 			}`}
 			animate={{ width: isSidebarOpen ? 256 : 80 }}
 		>
-			<div className='h-full bg-gray-900 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700'>
+			{/* sets background of sidebar & text */}
+			<div className='h-full bg-gray-900 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700 text-gray-100'>
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
@@ -34,10 +35,14 @@ const Sidebar = () => {
 					<Menu size={24} />
 				</motion.button>
 
+				{/* the items within the sidebar */}
 				<nav className='mt-8 flex-grow'>
+					{/* Maps the dictionary list */}
 					{SIDEBAR_ITEMS.map((item) => (
-						<Link key={item.href} to={item.href}>
-							<motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
+						<Link key={item.href} to={item.href}> {/* This line is what does the transfer from page to page */}
+							{/* what handles the style of the hovered color over each item */}
+							<motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'> 
+								{/* What pairs the icon next to each sidebar option */}
 								<item.icon size={20} style={{ color: item.color, minWidth: "20px" }} />
 								<AnimatePresence>
 									{isSidebarOpen && (
@@ -60,4 +65,3 @@ const Sidebar = () => {
 		</motion.div>
 	);
 };
-export default Sidebar;

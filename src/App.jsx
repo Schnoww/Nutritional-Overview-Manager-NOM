@@ -1,44 +1,45 @@
-// App.jsx
-import { Route, Routes, Navigate } from "react-router-dom";
+// Library imports
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+// Style imports
+import Sidebar from "./components/common/Sidebar";
+// Route imports
+import OverviewPage from "./pages/OverviewPage";
+import UsersPage from "./pages/UsersPage"; 
+import DiningPage from "./pages/Dining"; 
+import AnalyticsPage from "./pages/AnalyticsPage"; 
+import AnnouncementsPage from "./pages/Announcements"; 
+import SettingsPage from "./pages/SettingsPage"; 
+import DietPage from "./pages/DietaryTracking"; 
+import CalendarPage from "./pages/CalendarPage"; 
+import Marketplace from "./components/dining/Marketplace";
+import Fod from "./components/dining/Fod";
+import Jazzmans from "./components/dining/Jazzmans";
+import Moes from "./components/dining/Moes";
+import Wow from "./components/dining/Wow";
 
-import Header from "./components/common/Header"; // Import Header
-import Sidebar from "./components/common/Sidebar"; // Import Sidebar
-
-import SignUpPage from "./pages/SignUpPage"; // Import SignUpPage
-import Login from "./pages/Login"; // Import Login
-import OverviewPage from "./pages/OverviewPage"; // Import OverviewPage
-import UsersPage from "./pages/UsersPage"; // Import UsersPage
-import DiningPage from "./pages/Dining"; // Import DiningPage
-import AnalyticsPage from "./pages/AnalyticsPage"; // Import AnalyticsPage
-import AnnouncementsPage from "./pages/Announcements"; // Import AnnouncementsPage
-import SettingsPage from "./pages/SettingsPage"; // Import SettingsPage
-import DietPage from "./pages/DietaryTracking"; // Import DietPage
-import CalendarPage from "./pages/CalendarPage"; // Import CalendarPage
-
-function App() {
+export default function App(){
     return (
-        <div className='flex h-screen bg-gray-900 text-gray-100 overflow-hidden'>
-            <Sidebar /> {/* Render Sidebar */}
-            <Routes>
-                {/*Trying this */}
-                <Route path="/" element={<Navigate to="/auth/signup" replace />} />
-
-                {/*Auth Routes */}
-                {/* <Route path="/auth/signup" element={<SignUpPage />} />
-                <Route path="/auth/login" element={<Login />} /> */}
-
-                {/* Application Routes */}
-                <Route path="/overview" element={<OverviewPage />} />
-                <Route path="/dining" element={<DiningPage />} />
-                <Route path="/users" element={<UsersPage />} />
-                <Route path="/analytics" element={<AnalyticsPage />} />
-                <Route path="/announcements" element={<AnnouncementsPage />} />
-                <Route path="/calendar" element={<CalendarPage />} />
-                <Route path="/dietary_tracking" element={<DietPage />} />
-                <Route path="/settings" element={<SettingsPage />} />
-            </Routes>
+        <div className='flex h-screen bg-gray-900 overflow-hidden'> {/* container for every pages background */}
+            <Router>
+                <Sidebar /> {/* Render Sidebar */}
+                <Routes>
+                    {/* Sidebar routes */}
+                    <Route path="/" element={<OverviewPage />} />
+                    <Route path="/dining" element={<DiningPage />} />
+                    <Route path="/users" element={<UsersPage />} />
+                    <Route path="/analytics" element={<AnalyticsPage />} />
+                    <Route path="/announcements" element={<AnnouncementsPage />} />
+                    <Route path="/calendar" element={<CalendarPage />} />
+                    <Route path="/dietary_tracking" element={<DietPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                    {/* Dining routes */}
+                    <Route path="/dining/marketplace" element={<Marketplace />} />
+                    <Route path="/dining/fod" element={<Fod />} />
+                    <Route path="/dining/jazzmans" element={<Jazzmans />} />
+                    <Route path="/dining/moes" element={<Moes />} />
+                    <Route path="/dining/wow" element={<Wow />} />
+                </Routes>
+            </Router>    
         </div>
-    );
+    )
 }
-
-export default App;
