@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTrash, FaFilter, FaSearch, FaChevronDown, FaChevronRight } from "react-icons/fa";
+// import { FaTrash } from "lucid";
 import "./Favorites.css"; // Import CSS file
 import iniData from './data.jsx';
 
