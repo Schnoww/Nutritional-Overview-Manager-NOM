@@ -1,10 +1,12 @@
-import Header from "../components/common/Header";
+import InnerCard from "../components/common/InnerCard";
+import PageStarter from "../components/common/PageStarter";
 
-const CalendarPage = () => {
+export default function CalendarPage(){
 	return (
-		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title={"Calendar"} />
-		</div>
-	);
-};
-export default CalendarPage;
+		<PageStarter title={"Calendar"}>
+			<InnerCard >
+
+			</InnerCard>
+		</PageStarter>
+	)
+}

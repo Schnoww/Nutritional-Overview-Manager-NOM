@@ -19,8 +19,8 @@ const Profile = () => {
 		<SettingSection icon={User} title={"Profile"}>
 			<div className='flex flex-col sm:flex-row items-center mb-6'>
 				<div>
-					<h3 className='text-lg font-semibold text-gray-100'>Mateusz Wiszniewski</h3>
-					<p className='text-gray-400'>mwisz1@unh.newhaven.edu</p>
+					<h3 className='text-lg font-semibold text-gray-100'>Demo User</h3>
+					<p className='text-gray-400'>duser1@unh.newhaven.edu</p>
 				</div>
 			</div>
 			<div className='mt-4'>

@@ -1,10 +1,12 @@
-import Header from "../components/common/Header";
+import InnerCard from "../components/common/InnerCard"
+import PageStarter from "../components/common/PageStarter"
 
-const AnalyticsPage = () => {
+export default function AnalyticsPage(){
 	return (
-		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title={"Analytics Dashboard"} />
-		</div>
-	);
-};
-export default AnalyticsPage;
+		<PageStarter title={"Analytics"}>
+			<InnerCard>
+
+			</InnerCard>
+		</PageStarter>
+	)
+}

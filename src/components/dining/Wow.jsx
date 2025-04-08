@@ -1,23 +1,30 @@
-import SettingSection from "./DiningCard";
+import InnerCard from "../common/InnerCard";
+import PageStarter from "../common/PageStarter";
+import MenuDropdown from "./MenuDropdown";
 
-const Wow = () => {
+
+export default function Wow(){
 	return (
-		<SettingSection>
-			<div className='flex flex-col items-center mb-6'>
-				<div className='relative w-full h-64 rounded-lg overflow-hidden shadow-lg'>
-					<img
-						src='WOW.jpg'
-						alt='Marketplace'
-						className='object-cover w-full h-full'
-					/>
-					{/**/}
-					<div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-10'> {/* Change 50 to 30 */}
-						<h1 className='text-white text-2xl font-bold'></h1>
-					</div>
-				</div>
-			</div>
-		</SettingSection>
-	);
-};
+		<PageStarter title={"WOW"}>
+			{/* Breakfast */}
+			<InnerCard>
+				<MenuDropdown time={"Breakfast"} location={"WOW"}/>
+			</InnerCard>
 
-export default Wow
+			{/* Lunch */}
+			<InnerCard>
+				<MenuDropdown time={"Lunch"} location={"WOW"}/>
+			</InnerCard>
+			
+			{/* Dinner */}
+			<InnerCard>
+				<MenuDropdown time={"Dinner"} location={"WOW"}/>
+			</InnerCard>
+			
+			{/* All Time */}
+			<InnerCard>
+				<MenuDropdown time={"All Day"} location={"WOW"}/>
+			</InnerCard>
+		</PageStarter>
+	)
+}

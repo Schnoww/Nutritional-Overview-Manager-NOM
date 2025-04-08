@@ -1,5 +1,7 @@
+// Style imports
 import { Accessibility } from "lucide-react";
-import Header from "../components/common/Header";
+import PageStarter from "../components/common/PageStarter";
+// Setting card imports
 import Notifications from "../components/settings/Notifications";
 import UserExperience from "../components/settings/UserExperience";
 import Profile from "../components/settings/Profile";
@@ -7,10 +9,9 @@ import Security from "../components/settings/Security";
 import MealPlan from "../components/settings/MealPlan";
 import Support from "../components/settings/Support";
 
-const SettingsPage = () => {
+export default function SettingsPage(){
 	return (
-		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title='Settings' />
+		<PageStarter title={"User"}>
 			<main className='max-w-4xl mx-auto py-6 px-4 lg:px-8'>
 				<Profile />
 				<Notifications />
@@ -19,7 +20,6 @@ const SettingsPage = () => {
 				<Security />
 				<Support />
 			</main>
-		</div>
-	);
-};
-export default SettingsPage;
+		</PageStarter>
+	)
+}
