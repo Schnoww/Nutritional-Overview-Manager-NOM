@@ -2,6 +2,8 @@ import { BarChart2, Calendar, DollarSign, Locate, Megaphone, Utensils, Menu, Set
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "C:/Users/kmdba/VSCode Capston/Nutritional-Overview-Manager-NOM/public/NOMlogo.png";
+
 
 const SIDEBAR_ITEMS = [
 	{ name: "Overview", icon: BarChart2, color: "#6366f1",href: "/", },
@@ -26,6 +28,7 @@ export default function Sidebar(){
 		>
 			{/* sets background of sidebar & text */}
 			<div className='h-full bg-gray-900 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700 text-gray-100'>
+
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
@@ -35,6 +38,27 @@ export default function Sidebar(){
 					<Menu size={24} />
 				</motion.button>
 
+				<div className="flex items-center space-x-3 px-2">
+				<img
+					src={logo} // or "/logo.png" if in public
+					alt="Logo"
+					className="w-8 h-8 object-contain"
+				/>
+				<AnimatePresence>
+					{isSidebarOpen && (
+						<motion.span
+							initial={{ opacity: 0, x: -10 }}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: -10 }}
+							className="text-white font-semibold text-md"
+						>
+							Nutritional Overview Manager
+						</motion.span>
+					)}
+				</AnimatePresence>
+			</div>
+
+			
 				{/* the items within the sidebar */}
 				<nav className='mt-8 flex-grow'>
 					{/* Maps the dictionary list */}
