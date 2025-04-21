@@ -31,8 +31,6 @@ const ThemeSelector = () => {
           data-[theme=tritanopia]:text-black
           "
       >
-        <h1 className="text-2xl p-4"> Accessible Content</h1>
-        <p className="p-4">This coontent is styled based on the selected theme</p>
       </div>
     </div>
   );
