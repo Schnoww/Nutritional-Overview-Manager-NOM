@@ -32,7 +32,7 @@ const Marketplace = () => {
 	};
 
 	return (
-		<div className="w-full flex justify-center p-6 bg-gray min-h-screen">
+		<div className="w-full flex justify-center p-6 bg-gray min-h-screen overflow-y-auto">
 			<div className="w-full max-w-3xl space-y-4">
 				{/* Header for the Marketplace section */}
 				<h1 className="text-4xl font-bold text-white text-center mb-6">Marketplace</h1>
