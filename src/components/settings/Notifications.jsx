@@ -5,9 +5,9 @@ import ToggleSwitch from "./ToggleSwitch";
 
 const Notifications = () => {
 	const [notifications, setNotifications] = useState({
-		push: true,
+		push: false,
 		email: false,
-		sms: true,
+		sms: false,
 	});
 
 	return (
@@ -15,7 +15,7 @@ const Notifications = () => {
 			<ToggleSwitch
 				label={"Push Notifications"}
 				isOn={notifications.push}
-				onToggle={() => setNotifications({ ...notifications, push: !notifications.push })}
+				onToggle={() => setNotifications(notifications?.push )}
 			/>
 			<ToggleSwitch
 				label={"Email Notifications"}

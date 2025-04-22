@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const SIDEBAR_ITEMS = [
 	{ name: "Dining", icon: Utensils, color: "#FFFFFF", href: "/dining", },
 	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
-	// { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
+	//{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
 	{ name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
 	{ name: "Calendar", icon: Calendar, color: "#FFFF00", href: "/calendar" },
 	{ name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },

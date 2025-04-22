@@ -3,7 +3,7 @@ import SettingSection from "./SettingSection";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import {auth} from "/src/config/firebase.jsx";
-
+import { AuthCredential, EmailAuthCredential } from "firebase/auth";
 //uncomment this in the future
 // import SignUpPage from "../pages/SignUpPage"; 
 
@@ -12,7 +12,7 @@ const Profile = () => {
 
 	//for navigation 
 	const navigate = useNavigate();
-	const { setUser } = useAuth();
+	const { user, setUser } = useAuth();
 	
 	const handleSignOut = () => {
 		try{
@@ -27,10 +27,10 @@ const Profile = () => {
 
 	return (
 		<SettingSection icon={User} title={"Profile"}>
-			<div className='flex flex-col sm:flex-row items-center mb-6'>
+			<div className='flex flex-col sm:flex-row items-center justify-left mb-6'>
 				<div>
-					{/* <h3 className='text-lg font-semibold text-gray-100'>Mateusz Wiszniewski</h3>
-					<p className='text-gray-400'>mwisz1@unh.newhaven.edu</p> */}
+					<h3 className='text-lg font-semibold text-gray-100'>{user.email}</h3>
+					{/* <p className='text-gray-400'>{user.email}</p> */}
 				</div>
 			</div>
 			<div className='mt-4'>
