@@ -32,7 +32,7 @@ export default function MealTable({ dataType, locationText, timeText, searched, 
         filtered.map(food => (
             <Fragment key={food.id}>
                 <tr className="hover:bg-gray-400 cursor-pointer" onClick={() => toggleExpand(food.name)}>
-                    {/* <td>{food.location}</td> */}
+                    <td>{food.location}</td>
                     <td className="">
                         {food.name}
                         {/* remove the food.id below this line to fix the chevron issue */}
