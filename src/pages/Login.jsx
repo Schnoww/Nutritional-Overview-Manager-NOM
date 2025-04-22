@@ -27,47 +27,68 @@ const Login = () => {
             console.log("Incorrect credentials")
         }
     };
+
+    const handleSignUpRedirect = () => {
+        navigate('/signup'); // Assuming "/signup" is the route to SignUpPage.jsx
+    };
     
-    return (
-        <div className="bg-indigo-400 flex h-screen w-screen items-center justify-center px-4 sm:px-6 lg:px-8">
-            <form className='bg-white p-6 rounded-lg shadow-md w-full max-w-sm'
-            onSubmit={handleSubmit}>
-                <h1 className='text-black text-2xl font-semibold mb-4'>Login</h1>
-                
-                <label htmlFor="email" className='text-black block mb-2'>
-                    Email:
+return (
+    <div className="bg-blue-100 flex flex-col h-screen w-screen items-center justify-center px-4 sm:px-6 lg:px-8">
+        <h1 className="text-blue-600 text-5xl font-bold mb-5 text-center">
+            NOM
+        </h1>
+        <h2 className="text-black text-2xl text-center mb-8">
+            Providing the info you need for what you want to eat.
+        </h2>
+        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+                <label htmlFor="email" className="text-black block mb-2">
                     <input 
                         type="email" 
                         id="email"
+                        placeholder="Email address"
                         onChange={(e) => setEmail(e.target.value)} 
-                        className='mt-1 block w-full border border-gray-300 rounded-md p-2' 
+                        className="mt-1 block w-full border border-gray-300 rounded-md p-3 placeholder-gray-500" 
                         required 
                     />
                 </label>
 
-                <label htmlFor="password" className='text-black block mb-2'>
-                    Password:
+                <label htmlFor="password" className="text-black block mb-2">
                     <input 
                         type="password" 
                         id="password"
+                        placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
-                        className='mt-1 block w-full border border-gray-300 rounded-md p-2' 
+                        className="mt-1 block w-full border border-gray-300 rounded-md p-3 placeholder-gray-500" 
                         required 
                     />
                 </label>
 
                 <button 
                     type="submit" 
-                    className='w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200'
+                    className="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200"
                 >
-                    Login
+                    Log In
                 </button>
-
-                <p className='mt-4 text-center'>
-                </p>
+            
+                <div className="text-center">
+                    <Link to="/forgot-password" className="text-blue-500 text-sm hover:underline">
+                        Forgotten password?
+                    </Link>
+                </div>
+                <hr className="my-4" />
+                <div className="text-center">
+                    <button 
+                        type="button"
+                        onClick={handleSignUpRedirect}
+                        className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md transition duration-200">
+                        Create New Account
+                    </button>
+                </div>
             </form>
         </div>
-    );
+    </div>
+);
 }
 
-export default Login
+export default Login;
