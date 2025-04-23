@@ -5,6 +5,7 @@ import Header from "./components/common/Header"; // Import Header
 import Sidebar from "./components/common/Sidebar"; // Import Sidebar
 
 import Login from "./pages/Login"; // Import Login
+import SignUpPage from "./pages/SignUpPage"; // Import Sign Up
 import UsersPage from "./pages/UsersPage"; // Import UsersPage
 import DiningPage from "./pages/Dining"; // Import DiningPage
 import AnalyticsPage from "./pages/AnalyticsPage"; // Import AnalyticsPage
@@ -46,7 +47,8 @@ function App() {
                 <Route path="/dietary_tracking" element={<DietPage />} />
 								<Route path="/favorites" element={<FavoritesPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
-
+                <Route path="/signup" element={<SignUpPage />} />
+                
 								<Route path="/dining/marketplace" element={<Marketplace />} />
                 <Route path="/dining/fod" element={<Fod />} />
                 <Route path="/dining/jazzmans" element={<Jazzmans />} />

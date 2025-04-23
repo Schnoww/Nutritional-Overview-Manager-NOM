@@ -89,9 +89,10 @@ const CalendarPage = () => {
 						{/* Meal boxes */}
 						{iniData
 	.filter((food) =>
-		Array.isArray(food.dates) &&
-		food.dates.some((d) => dayjs(d).isSame(selectedDate, "day"))
-	)
+    (Array.isArray(food.dates) &&
+     food.dates.some((d) => dayjs(d).isSame(selectedDate, "day"))) ||
+    (food.date && dayjs(food.date).isSame(selectedDate, "day"))
+)
 	.map((food, index) => {
 		const block = timeBlocks[food.time];
 		if (!block) return null;

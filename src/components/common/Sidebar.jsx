@@ -2,14 +2,17 @@ import { BarChart2, Calendar, DollarSign, Locate, Megaphone, Utensils, Menu, Set
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "../../../public/NOMlogo.png";
+
 
 // might have scaling issues on certain window sizes if there are too many side bar elements
 // TODO: when collapsed add NOM logo to top of list. when open display "nutritional overview manager" next to hamburger
 
 const SIDEBAR_ITEMS = [
+	// { name: "Overview", icon: BarChart2, color: "#6366f1",href: "/", },
 	{ name: "Dining", icon: Utensils, color: "#FFFFFF", href: "/dining", },
 	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
-	//{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
+	// { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
 	{ name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
 	{ name: "Calendar", icon: Calendar, color: "#FFFF00", href: "/calendar" },
 	{ name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },
@@ -37,6 +40,25 @@ export default function Sidebar(){
 				>
 					<Menu size={24} />
 				</motion.button>
+				<div className="flex items-center space-x-3 px-2">
+				<img
+					src={logo} // or "/logo.png" if in public
+					alt="Logo"
+					className="w-8 h-8 object-contain"
+				/>
+				<AnimatePresence>
+					{isSidebarOpen && (
+						<motion.span
+							initial={{ opacity: 0, x: -10 }}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: -10 }}
+							className="text-white font-semibold text-md"
+						>
+							Nutritional Overview Manager
+						</motion.span>
+					)}
+				</AnimatePresence>
+			</div>
 
 				{/* the items within the sidebar */}
 				<nav className='mt-8 flex-grow'>
