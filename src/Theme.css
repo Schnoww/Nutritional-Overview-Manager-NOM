@@ -1,0 +1,26 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+
+[data-theme= "deuteranopia"] {
+  --background-color: #f5f5dc;
+  --text-color: #161616;
+}
+
+[data-theme= "protanopia"] {
+  --background-color: #e6f7ff;
+  --text-color: #00274d;
+}
+
+[data-theme= "tritanopia"]{
+  --background-color: #d9d9d9;
+  --text-color: #000000;
+}
+
+body{
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
