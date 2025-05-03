@@ -9,9 +9,9 @@ export default function DiningPage(){
 			<main className='max-w-4xl mx-auto py-6 px-4 lg:px-8'>
 					<DiningCard img={'/Marketplace.png'} locationURL={"marketplace"}/>
 					<DiningCard img={'/FOD.png'} locationURL={"fod"} resturantName={"Food on Demand"}/>
-					<DiningCard img={'/Jazzmans.png'} locationURL={"jazzmans"}/>
+					{/* <DiningCard img={'/Jazzmans.png'} locationURL={"jazzmans"}/>
 					<DiningCard img={'/Moes.jpg'} locationURL={"moes"}/>
-					<DiningCard img={'/WOW.jpg'} locationURL={"wow"}/>
+					<DiningCard img={'/WOW.jpg'} locationURL={"wow"}/> */}
 			</main>
 		</PageStarter>
 	)
