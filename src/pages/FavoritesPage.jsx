@@ -29,13 +29,15 @@ export default function FavoritesPage(){
                 </div>
                 {/* Food list */}
                 <table className="mt-4 w-auto text-white">
-                    <thread>
-                        <tr className="border-b-2 border-b-gray-600">
-                            {/* This stuff needs to be fixed so that it spans the entire width */}
-                            <th>Name</th>
-                            <th className="indent-5">Food Item</th>
-                        </tr>
-                    </thread>
+                <thead>
+                <tr className="border-b-2 border-b-gray-600">
+                    <th className="px-4 py-2 text-left">Name</th>
+                    <th className="px-4 py-2 text-left">Image</th>
+                    <th className="px-4 py-2 text-left">Food Item</th>
+                    <th className="px-4 py-2 text-left"></th> {/* empty for chevron */}
+                </tr>
+                </thead>
+
                     <tbody>
                         {/* What displays the favorited food items */}
                         <MealTable dataType={"favorite"} searched={searchTerm}/>
