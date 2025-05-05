@@ -32,8 +32,11 @@ function App() {
 						{user && <Sidebar /> }{/* Render Sidebar */}
             <Routes>
                 {/*Trying this */}
-                {!user ? <Route path="/" element={<Navigate to="/auth/login" replace />} /> : null }
-								
+                <Route 
+                  path="/" 
+                  element={!user ? <Navigate to="/auth/login" replace />: <Navigate to="/dining" replace />}
+								/>
+
 								{/*Auth Routes */}
 								<Route path="/auth/login" element={<Login />} />
                 
