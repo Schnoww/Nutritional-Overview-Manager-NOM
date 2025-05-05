@@ -6,14 +6,15 @@ import logo from "C:/Users/kmdba/VSCode Capston/Nutritional-Overview-Manager-NOM
 
 
 const SIDEBAR_ITEMS = [
-	{ name: "Overview", icon: BarChart2, color: "#6366f1",href: "/", },
+	// { name: "Overview", icon: BarChart2, color: "#6366f1",href: "/", },
 	{ name: "Dining", icon: Utensils, color: "#FFFFFF", href: "/dining", },
-	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
+	// { name: "Users", icon: Users, color: "#EC4899", href: "/users" },
 	{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
-	{ name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
+	// { name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
 	{ name: "Calendar", icon: Calendar, color: "#FFFF00", href: "/calendar" },
-	{ name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },
+	{ name: "Favorites", icon: Locate, color: "#A020F0", href: "/favorites" },
 	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+
 ];
 
 export default function Sidebar(){

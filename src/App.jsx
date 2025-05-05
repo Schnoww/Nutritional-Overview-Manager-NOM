@@ -5,6 +5,7 @@ import Sidebar from "./components/common/Sidebar";
 // Route imports
 import OverviewPage from "./pages/OverviewPage";
 import UsersPage from "./pages/UsersPage"; 
+import FavoritesPage from "./pages/FavoritesPage";
 import DiningPage from "./pages/Dining"; 
 import AnalyticsPage from "./pages/AnalyticsPage"; 
 import AnnouncementsPage from "./pages/Announcements"; 
@@ -28,6 +29,7 @@ export default function App(){
                     <Route path="/dining" element={<DiningPage />} />
                     <Route path="/users" element={<UsersPage />} />
                     <Route path="/analytics" element={<AnalyticsPage />} />
+                    <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/announcements" element={<AnnouncementsPage />} />
                     <Route path="/calendar" element={<CalendarPage />} />
                     <Route path="/dietary_tracking" element={<DietPage />} />
