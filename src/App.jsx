@@ -6,8 +6,11 @@ import Sidebar from "./components/common/Sidebar"; // Import Sidebar
 
 import Login from "./pages/Login"; // Import Login
 import SignUpPage from "./pages/SignUpPage"; // Import Sign Up
+import ForgotPassword from './pages/ForgotPassword';
+
 import UsersPage from "./pages/UsersPage"; // Import UsersPage
 import DiningPage from "./pages/Dining"; // Import DiningPage
+import FoodPreferences from "./pages/FoodPreferences"; //import FoodPreferences Page
 import AnalyticsPage from "./pages/AnalyticsPage"; // Import AnalyticsPage
 import AnnouncementsPage from "./pages/Announcements"; // Import AnnouncementsPage
 import SettingsPage from "./pages/SettingsPage"; // Import SettingsPage
@@ -25,24 +28,28 @@ import { useAuth } from "./components/auth";
 
 function App() {
 	const {user} = useAuth();
-
+  
     return (
         <div className='flex h-screen bg-gray-900 text-gray-100 overflow-hidden'>
 				
 						{user && <Sidebar /> }{/* Render Sidebar */}
             <Routes>
                 {/*Trying this */}
+
                 <Route 
                   path="/" 
-                  element={!user ? <Navigate to="/auth/login" replace />: <Navigate to="/dining" replace />}
+                  element={ !user ? <Navigate to="/auth/login" replace /> : <Navigate to="/dining" replace />}
 								/>
+                
 
 								{/*Auth Routes */}
 								<Route path="/auth/login" element={<Login />} />
+                <Route path="/signup" element={<SignUpPage />} />
                 
 
                 {/* Application Routes */}
                 <Route path="/dining" element={<DiningPage />} />
+                <Route path="/food-preferences" element={<FoodPreferences />} />
                 <Route path="/users" element={<UsersPage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/announcements" element={<AnnouncementsPage />} />
@@ -50,8 +57,8 @@ function App() {
                 <Route path="/dietary_tracking" element={<DietPage />} />
 								<Route path="/favorites" element={<FavoritesPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
-                <Route path="/signup" element={<SignUpPage />} />
-                
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+
 								<Route path="/dining/marketplace" element={<Marketplace />} />
                 <Route path="/dining/fod" element={<Fod />} />
                 <Route path="/dining/jazzmans" element={<Jazzmans />} />

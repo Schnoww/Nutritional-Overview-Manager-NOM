@@ -15,7 +15,7 @@ const SIDEBAR_ITEMS = [
 	// { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
 	{ name: "Announcements", icon: Megaphone, color: "#ff0000", href: "/announcements" },
 	{ name: "Calendar", icon: Calendar, color: "#FFFF00", href: "/calendar" },
-	{ name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },
+	// { name: "Dietary Tracking", icon: Locate, color: "#A020F0", href: "/dietary_tracking" },
 	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 	{ name: "Favorites", icon: Star, color: "#6EE7B7", href: "/favorites" },
 ];

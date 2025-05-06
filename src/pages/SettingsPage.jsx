@@ -14,8 +14,8 @@ const SettingsPage = () => {
 				
 				<Notifications />
 				<UserExperience />
-				<MealPlan />
-				<Security />
+				{/* <MealPlan />
+				<Security /> */}
 				<Support />
 			</main>
 		</div>
