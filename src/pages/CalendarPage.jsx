@@ -5,17 +5,17 @@ import iniData from "../components/dining/data.jsx";
 
 const CalendarPage = () => {
 	const [selectedDate, setSelectedDate] = useState(new Date());
-	const [minutesPerPixel, setMinutesPerPixel] = useState(.8); // Dynamic minutes per pixel
+	const [minutesPerPixel, setMinutesPerPixel] = useState(0.8); // Dynamic minutes per pixel
 
 	// Maps "Breakfast" to times
 	const timeBlocks = {
 		Breakfast: { start: 7 * 60, end: 11 * 60 },
 		Lunch: { start: 12 * 60, end: 16 * 60 },
-		Diner: {start: 17 * 60, end: 20 * 60}
+		Diner: { start: 17 * 60, end: 20 * 60 }
 	};
 
 	const startTime = 7 * 60; // 7:00 AM
-	const endTime = 20 * 60; // 4:00 PM
+	const endTime = 20 * 60; // 8:00 PM
 	const totalHeight = (endTime - startTime) * minutesPerPixel;
 
 	const handleMinutesPerPixelChange = (event) => {
@@ -26,6 +26,7 @@ const CalendarPage = () => {
 		<div className="flex-1 overflow-auto bg-gray-900 text-white min-h-screen">
 			<Header title="Calendar" />
 			<div className="p-6 space-y-8">
+				{/* Centering the date */}
 				<div className="text-center">
 					<h1 className="text-5xl font-bold">{dayjs(selectedDate).format("dddd,")}</h1>
 					<h1 className="text-5xl font-bold">{dayjs(selectedDate).format("MMM D")}</h1>
@@ -33,7 +34,7 @@ const CalendarPage = () => {
 
 				{/* Date Selector */}
 				<div className="overflow-x-auto">
-					<div className="flex space-x-6 text-gray-400 justify-center w-max px-4">
+					<div className="flex space-x-6 text-gray-400 justify-center w-full px-4">
 						{Array.from({ length: 16 }).map((_, index) => {
 							const date = dayjs(selectedDate).add(index - 7, "day");
 							const isSelected = dayjs(date).isSame(selectedDate, "day");
@@ -53,10 +54,11 @@ const CalendarPage = () => {
 					</div>
 				</div>
 
+				{/* Schedule header */}
 				<h2 className="text-2xl font-bold text-center">Schedule Today</h2>
 
 				{/* Adjust the height of the time blocks dynamically */}
-				<div className="flex">
+				<div className="flex justify-center mt-6">
 					{/* Time Labels */}
 					<div className="w-1/5 pr-4 text-sm text-gray-400">
 						{Array.from({ length: 14 }).map((_, i) => {
@@ -88,44 +90,41 @@ const CalendarPage = () => {
 
 						{/* Meal boxes */}
 						{iniData
-	.filter((food) =>
-		Array.isArray(food.dates) &&
-		food.dates.some((d) => dayjs(d).isSame(selectedDate, "day"))
-	)
-	.map((food, index) => {
-		const block = timeBlocks[food.time];
-		if (!block) return null;
+							.filter((food) =>
+								Array.isArray(food.dates) &&
+								food.dates.some((d) => dayjs(d).isSame(selectedDate, "day"))
+							)
+							.map((food, index) => {
+								const block = timeBlocks[food.time];
+								if (!block) return null;
 
-		const top = (block.start - startTime) * minutesPerPixel;
-		const height = (block.end - block.start) * minutesPerPixel;
+								const top = (block.start - startTime) * minutesPerPixel;
+								const height = (block.end - block.start) * minutesPerPixel;
 
-		return (
-			<div
-				key={food.name + index}
-				className="absolute bg-blue-500 rounded-xl shadow-lg px-4 py-3 left-4 right-4"
-				style={{ top: `${top}px`, height: `${height}px` }}
-			>
-				<div className="flex items-center space-x-4">
-					{/* Image on the left */}
-					<img
-						src={food.image || "../Marketplace.png"}
-						alt={food.name}
-						className="w-24 h-24 object-cover rounded-lg border border-gray-600"
-					/>
+								return (
+									<div
+										key={food.name + index}
+										className="absolute bg-blue-500 rounded-xl shadow-lg px-4 py-3 left-4 right-4"
+										style={{ top: `${top}px`, height: `${height}px` }}
+									>
+										<div className="flex items-center space-x-4">
+											{/* Image on the left */}
+											<img
+												src={food.image || "../Marketplace.png"}
+												alt={food.name}
+												className="w-24 h-24 object-cover rounded-lg border border-gray-600"
+											/>
 
-					{/* Text on the right */}
-					<div className="flex flex-col space-y-1 text-left text-white">
-						<p className="text-base opacity-80">{food.time}</p>
-						<h3 className="text-2xl font-bold">{food.name}</h3>
-						<p className="text-base">Calories: {food.calories}</p>
-					</div>
-				</div>
-			</div>
-		);
-	})}
-
-
-
+											{/* Text on the right */}
+											<div className="flex flex-col space-y-1 text-left text-white">
+												<p className="text-base opacity-80">{food.time}</p>
+												<h3 className="text-2xl font-bold">{food.name}</h3>
+												<p className="text-base">Calories: {food.calories}</p>
+											</div>
+										</div>
+									</div>
+								);
+							})}
 					</div>
 				</div>
 			</div>
