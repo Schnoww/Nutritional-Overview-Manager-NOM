@@ -1,5 +1,5 @@
 // App.jsx
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 
 import Header from "./components/common/Header"; // Import Header
 import Sidebar from "./components/common/Sidebar"; // Import Sidebar
@@ -28,17 +28,17 @@ import { useAuth } from "./components/auth";
 
 function App() {
 	const {user} = useAuth();
-  
+  //const location = useLocation();
     return (
         <div className='flex h-screen bg-gray-900 text-gray-100 overflow-hidden'>
-				
-						{user && <Sidebar /> }{/* Render Sidebar */}
+
+						{user && location.pathname != "/food-preferences" && <Sidebar />}{/* Render Sidebar */}
             <Routes>
                 {/*Trying this */}
 
                 <Route 
                   path="/" 
-                  element={ !user ? <Navigate to="/auth/login" replace /> : <Navigate to="/dining" replace />}
+                  element={ !user ? <Navigate to="/auth/login" /> : <Navigate to="/dining" />}
 								/>
                 
 
@@ -49,7 +49,7 @@ function App() {
 
                 {/* Application Routes */}
                 <Route path="/dining" element={<DiningPage />} />
-                <Route path="/food-preferences" element={<FoodPreferences />} />
+                {<Route path="/food-preferences" element={<FoodPreferences />} /> || <Sidebar />}
                 <Route path="/users" element={<UsersPage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/announcements" element={<AnnouncementsPage />} />
